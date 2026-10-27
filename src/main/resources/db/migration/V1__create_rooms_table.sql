@@ -1,0 +1,7 @@
+CREATE TABLE rooms (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    capacity INTEGER NOT NULL CHECK (capacity>0),
+    description VARCHAR(500),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+)
